@@ -1,0 +1,149 @@
+<div class="container">
+    <div class="row">
+        <div class="card">
+            <div class="card-body">
+                <form [formGroup]="prjectForm" (ngSubmit)="onSubmit()">
+                    <div class="col-12">
+                        <div class="row">
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example1">EnterProject</label>
+                                <input type="text" id="form8Example1" class="form-control" formControlName="EnterProject" placeholder="Enter Project Name *"  />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example3">Reason</label>
+                                <input type="text" id="form8Example3" class="form-control" formControlName="Reason" placeholder="Enter Reason Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example4">Type</label>
+                                <input type="text" id="form8Example4" class="form-control" formControlName="Type" placeholder="Enter Type Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Email input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example5">Division</label>
+                                <input type="text" id="form8Example5" class="form-control" formControlName="Division" placeholder="Enter Division Here..." />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example3">Category</label>
+                                <input type="text" id="form8Example3" class="form-control" formControlName="Category" placeholder="Enter Category Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example4">Priority</label>
+                                <input type="text" id="form8Example4" class="form-control" formControlName="Priority" placeholder="Enter Priority Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Email input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example5">Department</label>
+                                <input type="text" id="form8Example5" class="form-control" formControlName="Department" placeholder="Enter Department Here..." />
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example3">StartDate</label>
+                                <input type="date" id="form8Example3" class="form-control" formControlName="StartDate" placeholder="Enter StartDate Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Name input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example4">EndDate</label>
+                                <input type="date" id="form8Example4" class="form-control" formControlName="EndDate" placeholder="Enter EndDate Here..." />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <!-- Email input -->
+                              <div class="form-outline">
+                                <label class="form-label" for="form8Example5">location</label>
+                                <input type="text" id="form8Example5" class="form-control" formControlName="location" placeholder="Enter location Here..." />
+                              </div>
+                              <div style="margin-top: 20px;">
+                                <label for="cars">Status:</label>
+                                <select id="cars" name="cars" class="form-control" formControlName="Status">
+                                  <option value="Start" selected>Start</option>
+                                  <option value="Close">Close</option>
+                                  <option value="Cancel">Cancel</option>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="row">
+                            <div class="col saveProject">
+                                <button type="submit" class="btn btn-primary btn-md">Save Project</button>
+                            </div>
+                          </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row" style="margin-top: 60px;">
+        <div class="col-12">
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">id</th>
+                    <th scope="col">EnterProject</th>
+                    <th scope="col">Reason</th>
+                    <th scope="col">Division</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Priority</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">StartDate</th>
+                    <th scope="col">EndDate</th>
+                    <th scope="col">location</th>
+                    <th scope="col">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let data of projectDetails; let id=index">
+                    <td scope="col">{{id+1}}</td>
+                    <td scope="col">{{data.EnterProject}}</td>
+                    <td scope="col">{{data.Reason}}</td>
+                    <td scope="col">{{data.Division}}</td>
+                    <td scope="col">{{data.Category}}</td>
+                    <td scope="col">{{data.Priority}}</td>
+                    <td scope="col">{{data.Department}}</td>
+                    <td scope="col">{{data.StartDate | date:'shortDate'}}</td>
+                    <td scope="col">{{data.EndDate | date:'shortDate'}}</td>
+                    <td scope="col">{{data.location}}</td>
+                    <td scope="col">{{data.Status}}</td>
+                    <td><button type="submit" class="btn btn-primary btn-sm tablebtn" id="1" (click)="updateProjectDetails(data,'Registered')">Start</button></td>
+                    <td><button type="submit" class="btn btn-secondary btn-sm tablebtn" id="2" (click)="updateProjectDetails(data,'Closed')">Close</button></td>
+                    <td><button type="submit" class="btn btn-secondary btn-sm tablebtn" id="3" (click)="updateProjectDetails(data,'Cancelled')">Cancel</button></td>                 
+                  </tr>
+                </tbody>
+              </table>
+        </div>
+    </div>
+    <div class="col-12 dashbtn">
+      <button type="button" class="btn btn-primary btn-lg"(click)="gotoDashbordPage()">DashBord Page</button>
+  </div>
+</div>
+

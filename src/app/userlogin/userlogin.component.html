@@ -1,0 +1,22 @@
+<div class="container-fluid">
+    <div class="row backimg  col-lg-12 col-md-12 col-sm-12">
+        <div class="col-12 login">
+
+        </div>
+    </div>
+    <div class="row loginimg">
+        <div class="card" style="width: 17rem;">
+
+            <div class="card-body col-lg-12 col-md-6 col-sm-6">
+              <h5 style="text-align: center;">Login to get started</h5>
+              <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <label for="" class="mt-4">Email</label><br>
+                <input type="email" value="" formControlName="email">
+                <label for="" class="mt-4">Psssword</label><br>
+                <input type="password" value="" formControlName="password">
+                <button type="submit" class="btn btn-primary mt-5" (click)="onSubmit()">Login</button>
+              </form>
+            </div>
+          </div>
+    </div>
+</div>

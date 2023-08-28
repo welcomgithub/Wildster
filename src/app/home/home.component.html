@@ -1,0 +1,49 @@
+<div class="container-fuiled">
+  <div class="row" style="position: relative;">
+    <div class="col homeimg">
+<img src="../../assets/Fullscreen-Image-Gallery.jpg" alt="">
+    </div>
+  </div>
+  <div class="row" style="position: absolute; top: 0;">
+    
+      <div class="col">
+        <div class="d-flex flex-column flex-shrink-0 bg-light" style="width: 4.5rem;">
+          <ul class="nav nav-pills nav-flush flex-column mb-auto text-center">
+            <li class="nav-item">
+              <a routerLink="/home" class="nav-link active py-3 border-bottom" aria-current="page" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Home">
+                <fa-icon [icon]="faHome"></fa-icon>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/userReig" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Dashboard">
+                <fa-icon [icon]="faregistere"></fa-icon>
+              </a>
+            </li>
+            <li>
+              <a routerLink="" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Orders">
+                <fa-icon [icon]="faUser"></fa-icon>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/dashbord" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Products">
+                <fa-icon [icon]="faDashbord"></fa-icon>
+              </a>
+            </li>
+            <li>
+              <a routerLink="/projectinfo" class="nav-link py-3 border-bottom" title="" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-original-title="Customers">
+                  <fa-icon [icon]="faProject"></fa-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-6 wel">
+        <h1 style="font-size: 60px;">welcome Techprimelab </h1>
+        <button type="button" class="btn btn-primary btn-lg" (click)="onSubmit()">Get Started</button>
+      </div>
+    </div>
+    </div>
+    <div class="copl-12">
+      <router-outlet></router-outlet>
+
+    </div>

@@ -1,0 +1,28 @@
+.card{
+    top: 50px;
+    width: 100%;
+    background: -webkit-linear-gradient(left, #7a31af, #00fff2);
+    color: white;
+}
+.form-outline input{
+   border-bottom: solid 3px;
+}
+.saveProject{
+    // justify-content: center;
+    text-align: center;  
+    margin-top: 15px;
+}
+.saveProject button{
+    padding-left: 50px;
+    padding-right: 50px;
+    border-radius: 20px;
+}
+.tablebtn{
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 17px;
+}
+.dashbtn{
+    margin-top: 20px;
+    text-align: center;
+}
